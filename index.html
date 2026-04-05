@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI自动获客系统规划方案</title>
+<title>AI自动获客系统规划方案（含开源模型篇）</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:"Microsoft YaHei",SimSun,Arial,sans-serif;font-size:14px;color:#333;max-width:900px;margin:0 auto;padding:20px;line-height:1.8}
-h1{font-size:28px;color:#003366;border-bottom:3px solid #2E74B5;padding-bottom:10px;margin:40px 0 20px;page-break-before:always}
+h1{font-size:26px;color:#003366;border-bottom:3px solid #2E74B5;padding-bottom:10px;margin:40px 0 20px}
 h2{font-size:20px;color:#2E74B5;margin:30px 0 15px;border-left:4px solid #2E74B5;padding-left:12px}
 h3{font-size:16px;color:#1F5C8B;margin:20px 0 10px}
 p{margin:10px 0;text-align:justify;color:#444}
@@ -18,36 +18,40 @@ th{background:#2E74B5;color:#fff;padding:10px 8px;text-align:center;font-weight:
 td{border:1px solid #ddd;padding:8px 8px;vertical-align:top}
 tr:nth-child(even){background:#f5f8fc}
 .toc{background:#f0f4fa;padding:20px;border-radius:8px;margin:20px 0}
-.toc-item{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed #ccc}
-.section{page-break-after:always}
-.highlight{background:#fffbe6;padding:12px;border-left:4px solid #f0ad4e;border-radius:4px;margin:15px 0}
-.cover{text-align:center;padding:100px 20px}
-.cover h1{font-size:48px;color:#003366;border:none;padding:0}
-.cover h2{font-size:28px;color:#2E74B5;border:none;padding:10px 0}
+.cover{text-align:center;padding:80px 20px}
+.cover h1{font-size:44px;color:#003366;border:none;padding:0}
+.cover h2{font-size:26px;color:#2E74B5;border:none;padding:10px 0}
 .cover p{color:#666;font-size:16px}
-.chapter-num{font-size:14px;color:#888;margin-bottom:5px}
+.highlight{background:#fffbe6;padding:12px;border-left:4px solid #f0ad4e;border-radius:4px;margin:15px 0}
 .footer{text-align:center;color:#999;font-size:12px;margin-top:40px;border-top:1px solid #eee;padding-top:20px}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:bold;margin:2px}
+.tag-red{background:#ffe0e0;color:#c00}
+.tag-green{background:#e0f0e0;color:#060}
+.tag-blue{background:#e0e8ff;color:#006}
+.tag-orange{background:#fff0d0;color:#c60}
+.tag-gray{background:#eee;color:#666}
+.star{color:#f0ad4e}
+.section-break{margin:30px 0;padding:15px;background:#f8f8f8;border-radius:6px;text-align:center;color:#999;font-size:13px}
+.model-card{border:1px solid #ddd;border-radius:8px;padding:16px;margin:15px 0;background:#fff}
+.model-card h3{margin-top:0;color:#003366}
+.model-score{font-size:24px;color:#2E74B5;font-weight:bold}
 </style>
 </head>
 <body>
 
 <div class="cover">
-  
-<h1>【全域】AI自动获客系统</h1>
-  <h2>全治智能增长体系解方案</h2>
-  <p>覆盖：引流 · 识别 · 触达 · 转化 · 留存 · 数据闭环</p>
-  <p style="margin-top:30px;font-size:14px;color:#999">编制日期：2026年4月  |  版本：V1.0</p>
+  <h1>【全域】AI自动获客系统</h1>
+  <h2>全治智能增长体系解方案（2026版）</h2>
+  <p>覆盖：引流 · 识别 · 触达 · 转化 · 留存 · 数据闭环 · 开源模型选型</p>
+  <p style="margin-top:30px;font-size:14px;color:#999">编制日期：2026年4月  |  版本：V2.0（新增开源模型对比篇）</p>
 </div>
 
-<h1 class="section"><span class="chapter-num">第一章</span>系统概述</h1>
+<h1>第一章 系统概述</h1>
 
 <h2>1.1 核心理念</h2>
 <p>本系统是以人工智能为核心驱动力的全渠道智能获客体系。通过AI实现从"流量获取→用户识别→智能触达→精准转化→长期留存"的全链路自动化，最大化降低获客成本（CAD）并提升线索转化率和用户生命周期价值。</p>
 
-<h2>1.2 系统愿景</h2>
-<div class="highlight">让获客从"靠人工经验"升级为"AI大脑驱动"——7×24小时不间断运行，百万级流量自动筛选，线索分配不过夜。</div>
-
-<h2>1.3 核心价值</h2>
+<h2>1.2 核心价值</h2>
 <table>
 <tr><th>价值维度</th><th>量化目标</th><th>实现路径</th></tr>
 <tr><td>降低获客成本</td><td>CAC下降 40%-60%</td><td>AI自动化减少人工触达成本</td></tr>
@@ -57,7 +61,7 @@ tr:nth-child(even){background:#f5f8fc}
 <tr><td>数据驱动决策</td><td>归因准确率 95%+</td><td>全链路数据埋点+AI模型</td></tr>
 </table>
 
-<h1 class="section"><span class="chapter-num">第二章</span>客户画像与分层体系</h1>
+<h1>第二章 客户画像与分层体系</h1>
 
 <h2>2.1 用户画像维度</h2>
 <table>
@@ -76,18 +80,11 @@ tr:nth-child(even){background:#f5f8fc}
 <tr><td><strong>P1 高意向</strong></td><td>浏览+加购+留资，意向评分≥80</td><td>AI即时触达，1V1专属客服，限时优惠</td></tr>
 <tr><td><strong>P2 中意向</strong></td><td>深度浏览无购买，评分60-80</td><td>AI企微自动培育，内容种草，积分激励</td></tr>
 <tr><td><strong>P3 观望</strong></td><td>访问1-2次，无留资，评分30-60</td><td>AI营销自动化，培育内容推送</td></tr>
-<tr><td><strong>P4 低活跃</strong></td><td>30天无访问，评分<30</td><td>沉睡唤醒，爆款内容激活</td></tr>
+<tr><td><strong>P4 低活跃</strong></td><td>30天无访问，评分&lt;30</td><td>沉睡唤醒，爆款内容激活</td></tr>
 <tr><td><strong>P5 已流失</strong></td><td>60天无购买，流失预警</td><td>AI流失召回，专项福利刺激</td></tr>
 </table>
 
-<h2>2.3 AI评分体系</h2>
-<p><strong>AI综合评分 = 行为权重分(50%) + 内容兴趣匹配分(30%) + 转化潜力分(20%)</strong></p>
-<ul>
-<li>行为权重：浏览商品页×3分、收藏×5分，加购×8分、留资×15分，下单×25分</li>
-<li>AI实时计算，动态更新，评分结果同步至CRM系统</li>
-</ul>
-
-<h1 class="section"><span class="chapter-num">第三章</span>全渠道获客矩阵</h1>
+<h1>第三章 全渠道获客矩阵</h1>
 
 <h2>3.1 渠道价值对比</h2>
 <table>
@@ -98,19 +95,17 @@ tr:nth-child(even){background:#f5f8fc}
 <tr><td>企业微信私域</td><td>低</td><td>低</td><td>极高</td><td>高</td><td><strong>P1</strong></td></tr>
 <tr><td>B站/YouTube</td><td>中</td><td>低</td><td>中</td><td>中</td><td><strong>P2</strong></td></tr>
 <tr><td>知乎/公众号</td><td>中</td><td>中</td><td>高</td><td>低</td><td><strong>P2</strong></td></tr>
-<tr><td>短信/电话机器人</td><td>低</td><td>高</td><td>低</td><td>高</td><td><strong>P2</strong></td></tr>
 </table>
 
 <h2>3.2 AI内容获客（SEO+内容营销）</h2>
 <ul>
 <li><strong>【AI写作助手】</strong>自动生成SEO文章：关键词研究→标题生成→文章撰写→Meta优化→内部链接建议，全流程AI自动化</li>
 <li><strong>【智能分发】</strong>一篇文章AI改写适配多平台（抖音/小红书/知乎/公众号），保留核心信息的同时调整风格和长度</li>
-<li><strong>【问答自动化】</strong>抓取目标客户常见问题，AI生成高质量解答文章，同步发布至知乎、百度知道、360问答</li>
 <li><strong>【热点追踪】</strong>AI监控行业热点，24小时内生成蹭热点内容，抢占流量先机</li>
 <li><strong>【视频脚本】</strong>输入产品卖点，AI生成30秒/60秒/180秒多版本视频脚本，配合数字人/剪辑工具使用</li>
 </ul>
 
-<h1 class="section"><span class="chapter-num">第四章</span>AI自动化获客流程（AARRR）</h1>
+<h1>第四章 AI自动化获客流程（AARRR）</h1>
 
 <h2>4.1 Acquisition 获取阶段</h2>
 <table>
@@ -141,7 +136,7 @@ tr:nth-child(even){background:#f5f8fc}
 <li><strong>【老带新匹配】</strong>AI分析老客户社交关系图谱，识别最有可能介绍新客户的种子用户，定向激励</li>
 </ul>
 
-<h1 class="section"><span class="chapter-num">第五章</span>智能触达系统</h1>
+<h1>第五章 智能触达系统</h1>
 
 <h2>5.1 全触点自动化矩阵</h2>
 <table>
@@ -158,26 +153,23 @@ tr:nth-child(even){background:#f5f8fc}
 <li><strong>【品牌知识库】</strong>上传产品手册、公司文档、FAQ，AI话术基于知识库生成，确保信息准确性</li>
 <li><strong>【多风格切换】</strong>正式/活泼/专业/亲切4种语气模式，根据客户分层自动匹配</li>
 <li><strong>【A/B测试自动化】</strong>同一批客户随机发送2-3种话术版本，自动选出最优版本持续优化</li>
-<li><strong>【禁止词过滤】</strong>内置广告法+平台规则+品牌调性三重过滤，生成内容合规无忧</li>
 </ul>
 
-<h1 class="section"><span class="chapter-num">第六章</span>线索管理与转化</h1>
+<h1>第六章 线索管理与转化</h1>
 
-<h2>6.1 智能线索分配（Lead Routing）</h2>
+<h2>6.1 智能线索分配</h2>
 <ul>
-<li><strong>【实时分配】</strong>线索进入后，AI根据评分+地区+产品偏好，自动分配给最合适的销售/客服，响应时间<1分钟</li>
+<li><strong>【实时分配】</strong>线索进入后，AI根据评分+地区+产品偏好，自动分配给最合适的销售/客服，响应时间&lt;1分钟</li>
 <li><strong>【销售能力匹配】</strong>AI学习各销售历史转化率，将P1线索优先分配给TOP销售，P2/P3自动进入培育序列</li>
-<li><strong>【撞单保护】</strong>AI识别重复线索（手机号/微信号/公司名），避免内部竞争</li>
 </ul>
 
 <h2>6.2 智能跟进时机</h2>
 <ul>
-<li><strong>【最佳触达时间】</strong>AI分析每个客户的活跃时间段，在其最可能响应的时间点（如工作日10:00-11:00）自动发起触达</li>
-<li><strong>【跟进节奏】</strong>根据客户阶段自动生成跟进SOP：P1客户每天触达1次（3天后转每周）；P2客户每周触达2次</li>
+<li><strong>【最佳触达时间】</strong>AI分析每个客户的活跃时间段，在其最可能响应的时间点自动发起触达</li>
 <li><strong>【未响应升级】</strong>客户未响应48小时自动升级触达方式（短信→企微→电话），3次无响应自动降级至培育序列</li>
 </ul>
 
-<h1 class="section"><span class="chapter-num">第七章</span>数据分析与归因</h1>
+<h1>第七章 数据分析与归因</h1>
 
 <h2>7.1 全链路数据埋点</h2>
 <table>
@@ -187,17 +179,15 @@ tr:nth-child(even){background:#f5f8fc}
 <tr><td>留资</td><td>留资率/留资成本（CPL）</td><td>CRM系统</td></tr>
 <tr><td>转化</td><td>付费转化率/首单金额/ROI</td><td>电商/CRM系统</td></tr>
 <tr><td>复购</td><td>复购率/平均复购周期/LTV</td><td>CRM/电商系统</td></tr>
-<tr><td>推荐</td><td>分享率/裂变系数/K因子</td><td>运营数据</td></tr>
 </table>
 
 <h2>7.2 AI归因分析</h2>
 <ul>
 <li><strong>【多触点归因】</strong>AI分析每个转化客户的历史触达记录，识别真正的"转折触达"对转化的贡献权重</li>
-<li><strong>【渠道组合优化】</strong>AI给出最优渠道组合建议，自动增加高ROI渠道预算</li>
 <li><strong>【ROI预测】</strong>投放前AI预测各渠道ROI，给出预算分配建议；投放中实时调整预算分配</li>
 </ul>
 
-<h1 class="section"><span class="chapter-num">第八章</span>技术架构</h1>
+<h1>第八章 技术架构</h1>
 
 <h2>8.1 系统架构</h2>
 <table>
@@ -205,22 +195,11 @@ tr:nth-child(even){background:#f5f8fc}
 <tr><td>数据采集层</td><td>埋点SDK / ETL / 数据湖</td><td>Google Analytics SDK / 神策SDK / MinIO</td></tr>
 <tr><td>数据存储层</td><td>用户画像数据库 / 行为数据仓库</td><td>MySQL + Redis / ClickHouse</td></tr>
 <tr><td>AI模型层</td><td>推荐模型 / 评分模型 / 话术生成 / 流失预警</td><td>Python + TensorFlow / PyTorch / LangChain</td></tr>
-<tr><td>业务应用层</td><td>CRM / MA工具 / 广告投放平台 / 客服系统</td><td>自有CRM / 尘锋/探马 / 巨量引擎API</td></tr>
-<tr><td>触达渠道层</td><td>企微 / 短信 / 邮件 / 抖音私信 / APP推送</td><td>微伴/艾客 / SendGrid / 极光推送</td></tr>
-<tr><td>BI展示层</td><td>实时大屏 / 报表 / 预警</td><td>Metabase / Grafana / 自研大屏</td></tr>
+<tr><td>业务应用层</td><td>CRM / MA工具 / 广告投放平台</td><td>自有CRM / 尘锋/探马 / 巨量引擎API</td></tr>
+<tr><td>触达渠道层</td><td>企微 / 短信 / 邮件 / 抖音私信</td><td>微伴/艾客 / SendGrid / 极光推送</td></tr>
 </table>
 
-<h2>8.2 第三方系统对接</h2>
-<table>
-<tr><th>系统</th><th>对接方式</th><th>数据流向</th></tr>
-<tr><td>巨量引擎（抖音广告）</td><td>API</td><td>广告数据回传→AI优化竞价</td></tr>
-<tr><td>企业微信</td><td>官方API</td><td>粉丝数据→AI评分→自动话术→触达</td></tr>
-<tr><td>小红书</td><td>开放平台API</td><td>笔记数据→AI分析热度→自动发布</td></tr>
-<tr><td>CRM系统（尘锋/探马）</td><td>API</td><td>线索分配→销售跟进→转化数据回流</td></tr>
-<tr><td>电商/商城系统</td><td>数据库直连/API</td><td>订单数据→LTV计算→客户分层</td></tr>
-</table>
-
-<h1 class="section"><span class="chapter-num">第九章</span>实施路线图</h1>
+<h1>第九章 实施路线图</h1>
 
 <table>
 <tr><th>阶段</th><th>时间</th><th>里程碑</th><th>交付物</th></tr>
@@ -231,7 +210,7 @@ tr:nth-child(even){background:#f5f8fc}
 <tr><td>五期：规模化</td><td>第9-12个月</td><td>完整AARRR自动化+BI大屏</td><td>月流水100万+增长方案全量运行</td></tr>
 </table>
 
-<h1 class="section"><span class="chapter-num">第十章</span>投资回报测算</h1>
+<h1>第十章 投资回报测算</h1>
 
 <table>
 <tr><th>指标</th><th>现状（人工）</th><th>目标（AI自动化）</th><th>提升幅度</th></tr>
@@ -244,8 +223,251 @@ tr:nth-child(even){background:#f5f8fc}
 <tr><td>年净利润增量</td><td>—</td><td><strong>预估+360万元</strong></td><td>—</td></tr>
 </table>
 
+<h1>第十一章 AI获客开源模型对比（2025-2026）</h1>
+
+<div class="highlight">
+<strong>选型说明：</strong>以下模型均为开源（可本地部署/免费商用），均可用于AI获客系统的核心能力建设。根据不同的业务场景和资源条件，可以选择最适合的模型组合。推荐采用<strong>DeepSeek R1 + Qwen 3.5</strong>作为主力双引擎，兼顾性价比与中文能力。
+</div>
+
+<h2>11.1 主流开源模型综合对比</h2>
+<table>
+<tr>
+  <th>模型</th>
+  <th>机构</th>
+  <th>架构</th>
+  <th>参数规模</th>
+  <th>上下文</th>
+  <th>中文能力</th>
+  <th>获客场景评分</th>
+  <th>本地部署难度</th>
+  <th>商用许可</th>
+</tr>
+<tr>
+  <td><strong>DeepSeek R1</strong></td>
+  <td>深度求索</td>
+  <td>MoE</td>
+  <td>671B总/37B激活</td>
+  <td>128K</td>
+  <td>⭐⭐⭐⭐<br>优秀</td>
+  <td><strong style="color:#c00">9.0/10</strong></td>
+  <td><span class="tag tag-orange">中等</span></td>
+  <td><span class="tag tag-green">MIT开源</span></td>
+</tr>
+<tr>
+  <td><strong>Qwen 3.5</strong></td>
+  <td>阿里云</td>
+  <td>MoE</td>
+  <td>397B总/17B激活</td>
+  <td>128K</td>
+  <td><span class="star">⭐⭐⭐⭐⭐</span><br>中文第一</td>
+  <td><strong style="color:#c00">9.5/10</strong></td>
+  <td><span class="tag tag-orange">中等</span></td>
+  <td><span class="tag tag-green">Apache 2.0</span></td>
+</tr>
+<tr>
+  <td><strong>GLM-5</strong></td>
+  <td>智谱AI</td>
+  <td>MoE</td>
+  <td>744B总/40B激活</td>
+  <td>200K+</td>
+  <td>⭐⭐⭐⭐<br>优秀</td>
+  <td><strong style="color:#c00">8.5/10</strong></td>
+  <td><span class="tag tag-red">较高</span></td>
+  <td><span class="tag tag-green">可商用</span></td>
+</tr>
+<tr>
+  <td><strong>MiniMax M2.5</strong></td>
+  <td>MiniMax</td>
+  <td>Sparse MoE</td>
+  <td>10B激活</td>
+  <td>未定</td>
+  <td>⭐⭐⭐⭐<br>优秀</td>
+  <td><strong style="color:#c00">8.0/10</strong></td>
+  <td><span class="tag tag-green">简单</span></td>
+  <td><span class="tag tag-green">可商用</span></td>
+</tr>
+<tr>
+  <td><strong>Llama 3.3-70B</strong></td>
+  <td>Meta</td>
+  <td>Dense</td>
+  <td>70B</td>
+  <td>128K</td>
+  <td>⭐⭐⭐<br>中等</td>
+  <td><strong style="color:#888">7.0/10</strong></td>
+  <td><span class="tag tag-orange">中等</span></td>
+  <td><span class="tag tag-green">Llama 3.3 License</span></td>
+</tr>
+<tr>
+  <td><strong>Mistral Large 2</strong></td>
+  <td>Mistral AI</td>
+  <td>混合架构</td>
+  <td>7B-70B</td>
+  <td>128K</td>
+  <td>⭐⭐⭐<br>中等</td>
+  <td><strong style="color:#888">6.5/10</strong></td>
+  <td><span class="tag tag-green">简单</span></td>
+  <td><span class="tag tag-green">可商用</span></td>
+</tr>
+<tr>
+  <td><strong>Nemotron 3 (120B)</strong></td>
+  <td>NVIDIA</td>
+  <td>MoE</td>
+  <td>1200B总</td>
+  <td>1M Token</td>
+  <td>⭐⭐⭐<br>中等</td>
+  <td><strong style="color:#888">7.5/10</strong></td>
+  <td><span class="tag tag-red">较高</span></td>
+  <td><span class="tag tag-green">NVIDIA EULA</span></td>
+</tr>
+<tr>
+  <td><strong>Phi-4 (14B)</strong></td>
+  <td>Microsoft</td>
+  <td>Dense</td>
+  <td>14B</td>
+  <td>128K</td>
+  <td>⭐⭐<br>较弱</td>
+  <td><strong style="color:#888">6.0/10</strong></td>
+  <td><span class="tag tag-green">简单</span></td>
+  <td><span class="tag tag-blue">MIT</span></td>
+</tr>
+</table>
+
+<h2>11.2 各模型详细分析与获客适配度</h2>
+
+<div class="model-card">
+<h3>🥇 Qwen 3.5（阿里云）— 获客首选，中文最强</h3>
+<p><span class="model-score">推荐指数：⭐⭐⭐⭐⭐</span></p>
+<table>
+<tr><td><strong>参数规模</strong></td><td>397B总参数 / 17B激活参数（MoE架构）</td></tr>
+<tr><td><strong>核心优势</strong></td><td>中文能力全球第一；多模态原生支持；长上下文128K；阿里生态完善</td></tr>
+<tr><td><strong>获客适配场景</strong></td><td>营销文案生成、客服话术、智能外呼脚本、SEO文章、多语言出海内容</td></tr>
+<tr><td><strong>优势</strong></td><td>中文理解精准；输出格式稳定（JSON/结构化）；支持function calling；部署文档完善；通义千问API可直接调用</td></tr>
+<tr><td><strong>劣势</strong></td><td>超大规模模型需高端GPU（推荐A100 80G×2）；国产算力适配稍复杂</td></tr>
+<tr><td><strong>部署要求</strong></td><td>推理推荐：双卡A100 80G或同等算力；量化后可在单卡RTX 4090运行7B子模型</td></tr>
+<tr><td><strong>商用合规</strong></td><td>Apache 2.0，允许免费商用，支持二次训练</td></tr>
+</table>
+</div>
+
+<div class="model-card">
+<h3>🥈 DeepSeek R1（深度求索）— 性价比之王，推理能力最强</h3>
+<p><span class="model-score">推荐指数：⭐⭐⭐⭐⭐</span></p>
+<table>
+<tr><td><strong>参数规模</strong></td><td>671B总参数 / 37B激活参数（MoE架构）</td></tr>
+<tr><td><strong>核心优势</strong></td><td>推理能力比肩OpenAI o1；成本极低（API价格仅为GPT-4的1%）；纯强化学习训练涌现出自我反思能力</td></tr>
+<tr><td><strong>获客适配场景</strong></td><td>复杂客户意图识别、购买决策链分析、高转化话术生成、数据归因分析、ROI预测</td></tr>
+<tr><td><strong>优势</strong></td><td>复杂推理能力强；长链思维（CoT）让输出更精准；支持本地部署保证数据安全；API调用成本极低</td></tr>
+<tr><td><strong>劣势</strong></td><td>纯中文场景中文能力略逊Qwen；部署技术门槛高；671B全参数需多卡并行</td></tr>
+<tr><td><strong>部署要求</strong></td><td>推荐8×H100或4×A100 80G分布式部署；vLLM推理框架优化后效率高</td></tr>
+<tr><td><strong>商用合规</strong></td><td>MIT License，完全免费商用，无使用限制</td></tr>
+</table>
+</div>
+
+<div class="model-card">
+<h3>🥉 GLM-5（智谱AI）— 复杂工程与长推理首选</h3>
+<p><span class="model-score">推荐指数：⭐⭐⭐⭐</span></p>
+<table>
+<tr><td><strong>参数规模</strong></td><td>744B总参数 / 40B激活参数（MoE架构）</td></tr>
+<tr><td><strong>核心优势</strong></td><td>开源模型中参数规模最大；长推理能力最强；原生支持智能体架构；适配国产算力（昇腾910B）</td></tr>
+<tr><td><strong>获客适配场景</strong></td><td>多轮对话CRM系统、大规模用户分群分析、复杂销售流程自动化、政务/企业级获客</td></tr>
+<tr><td><strong>优势</strong></td><td>超长上下文（200K+）适合处理海量用户数据；Code能力突出；国产化部署有官方支持</td></tr>
+<tr><td><strong>劣势</strong></td><td>模型过大，本地部署硬件要求极高；蒸馏版效果与原版差距明显；商用授权条款需仔细审查</td></tr>
+<tr><td><strong>部署要求</strong></td><td>建议使用昇腾910B集群或云端算力；推荐通过智谱API直接调用（GLM-5 Turbo）</td></tr>
+<tr><td><strong>商用合规</strong></td><td>可商用，具体授权联系智谱确认</td></tr>
+</table>
+</div>
+
+<div class="model-card">
+<h3>MiniMax M2.5 — 轻量级极速推理，适合个人开发者</h3>
+<p><span class="model-score">推荐指数：⭐⭐⭐⭐</span></p>
+<table>
+<tr><td><strong>参数规模</strong></td><td>10B激活参数（Sparse MoE）</td></tr>
+<tr><td><strong>核心优势</strong></td><td>推理速度极快；成本低；支持Agent原生集成；情感分析能力强</td></tr>
+<tr><td><strong>获客适配场景</strong></td><td>实时客服对话、短信/企微话术即时生成、用户情感分析、轻量级CRM插件</td></tr>
+<tr><td><strong>优势</strong></td><td>单卡即可部署（RTX 3090/4090）；响应速度快（&lt;500ms）；情感识别精准</td></tr>
+<tr><td><strong>劣势</strong></td><td>复杂推理能力有限；超长上下文支持不如前三者；生态不如Qwen/GLM完善</td></tr>
+<tr><td><strong>部署要求</strong></td><td>单卡24G显存即可运行；推荐Ollama或vLLM本地部署</td></tr>
+<tr><td><strong>商用合规</strong></td><td>可商用，MiniMax官方提供API和开源权重</td></tr>
+</table>
+</div>
+
+<div class="model-card">
+<h3>Llama 3.3 70B（Meta）— 全球生态最完善</h3>
+<p><span class="model-score">推荐指数：⭐⭐⭐</span></p>
+<table>
+<tr><td><strong>参数规模</strong></td><td>70B（Dense架构）</td></tr>
+<tr><td><strong>核心优势</strong></td><td>全球开源生态最完善；第三方工具链丰富；支持80+语言；消费级GPU可运行（量化版）</td></tr>
+<tr><td><strong>获客适配场景</strong></td><td>跨境电商获客、多语言营销内容生成、第三方工具集成、Prompt工程研究</td></tr>
+<tr><td><strong>优势</strong></td><td>生态成熟（LlamaIndex/LangChain/ollama全面支持）；量化后单卡可跑；持续更新迭代</td></tr>
+<tr><td><strong>劣势</strong></td><td>中文能力明显弱于国产模型；70B Dense架构推理成本高于同等效果MoE模型</td></tr>
+<tr><td><strong>部署要求</strong></td><td>Q4量化后单卡RTX 3090可运行；生产环境推荐2×H100</td></tr>
+<tr><td><strong>商用合规</strong></td><td>LLaMA 3.3 Community License（不可用于替代Llama的竞争产品），免费商用</td></tr>
+</table>
+</div>
+
+<div class="model-card">
+<h3>NVIDIA Nemotron 3 (120B) — 企业级多智能体首选</h3>
+<p><span class="model-score">推荐指数：⭐⭐⭐⭐</span></p>
+<table>
+<tr><td><strong>参数规模</strong></td><td>120B（MoE架构，总参数未公开，业界估计更大）</td></tr>
+<tr><td><strong>核心优势</strong></td><td>100万Token超长上下文；原生多智能体架构；NVIDIA全套工具链优化（TensorRT-LLM）</td></tr>
+<tr><td><strong>获客适配场景</strong></td><td>多智能体协同获客（内容生成Agent+触达Agent+分析Agent协同）；超长文档分析（行业报告解读）</td></tr>
+<tr><td><strong>优势</strong></td><td>百万Token上下文解决"上下文爆炸"难题；NVIDIA推理优化极致（TensorRT-LLM提速5-10倍）</td></tr>
+<tr><td><strong>劣势</strong></td><td>商用授权为NVIDIA EULA（有一定限制）；国内获取困难；部署主要面向企业级数据中心</td></tr>
+<tr><td><strong>部署要求</strong></td><td>需要NVIDIA H100集群；通过NVIDIA NGC容器或云
+GPU云服务使用</td></tr></table></div>
+
+<h2>11.3 AI获客场景下的模型选型建议</h2>
+<table>
+<tr><th>获客场景</th><th>推荐模型</th><th>理由</th><th>成本参考</th></tr>
+<tr><td>营销文案批量生成</td><td><strong>Qwen 3.5</strong></td><td>中文最强，输出格式稳定，支持function calling</td><td>API成本低</td></tr>
+<tr><td>客服实时对话</td><td><strong>MiniMax M2.5 / Qwen 2.5-7B</strong></td><td>推理速度快，单卡可部署</td><td>极低</td></tr>
+<tr><td>用户意图识别与评分</td><td><strong>DeepSeek R1</strong></td><td>复杂推理能力强，CoT让评分更精准</td><td>API成本极低</td></tr>
+<tr><td>SEO/种草文章撰写</td><td><strong>Qwen 3.5 / GLM-5</strong></td><td>中文理解好，长上下文保持文章连贯性</td><td>中等</td></tr>
+<tr><td>销售话术生成</td><td><strong>DeepSeek R1 / Qwen 3.5</strong></td><td>逻辑推理强，生成的话术转化率高</td><td>低</td></tr>
+<tr><td>多语言出海内容</td><td><strong>Llama 3.3 70B</strong></td><td>支持80+语言，全球生态完善</td><td>中等</td></tr>
+<tr><td>多智能体获客系统</td><td><strong>Nemotron 3 / GLM-5</strong></td><td>超长上下文支持多Agent协同</td><td>较高</td></tr>
+<tr><td>数据归因与ROI预测</td><td><strong>DeepSeek R1</strong></td><td>数学与逻辑推理能力最强</td><td>极低</td></tr>
+<tr><td>视频脚本生成</td><td><strong>Qwen 3.5</strong></td><td>多模态支持，视频脚本结构化输出</td><td>低</td></tr>
+<tr><td>流失预警与召回</td><td><strong>DeepSeek R1 / GLM-5</strong></td><td>长序列分析用户历史行为</td><td>低</td></tr>
+</table>
+
+<h2>11.4 推荐组合方案</h2>
+
+<div class="highlight">
+<strong>方案A（性价比首选）：Qwen 3.5 + DeepSeek R1 双引擎</strong><br>
+主力文案/话术/SEO：Qwen 3.5（中文最强）<br>
+复杂推理/评分/归因：DeepSeek R1（推理最强，成本最低）<br>
+部署成本：预计2-4万元；或全部使用API调用（月成本小于5000元）<br>
+适用：中小企业，月GMV 50万-500万的增长阶段
+</div>
+
+<div class="highlight">
+<strong>方案B（旗舰全功能）：GLM-5 + Qwen 3.5 + DeepSeek R1 三引擎</strong><br>
+GLM-5：复杂CRM自动化、超长用户分析<br>
+Qwen 3.5：日常文案、客服、多语言<br>
+DeepSeek R1：推理与归因<br>
+部署成本：10-20万元（昇腾集群或云端）<br>
+适用：大型企业，月GMV 500万+的成熟运营阶段
+</div>
+
+<div class="highlight">
+<strong>方案C（轻量快速启动）：MiniMax M2.5 + Qwen 2.5-7B</strong><br>
+MiniMax M2.5：实时客服、短信话术<br>
+Qwen 2.5-7B：文案生成、SEO文章<br>
+部署成本：小于1万元（单卡RTX 4090可运行）<br>
+适用：个人创业者，月GMV小于50万的冷启动阶段
+</div>
+
+<h2>11.5 部署实施要点</h2>
+<ul>
+<li><strong>数据安全：</strong>敏感客户数据建议本地部署，选用Qwen/DeepSeek/GLM开源权重；对外数据脱敏后再调用外部API</li>
+<li><strong>成本控制：</strong>日常文案用Qwen 2.5（成本低），复杂分析用DeepSeek R1（性价比最高），避免全量使用GPT-4o/Claude等高价API</li>
+<li><strong>国产化替代：</strong>如需完全国产化：底层算力选昇腾910B，模型选GLM-5（官方适配）或Qwen（阿里支持），中间件选国产向量数据库（Milvus/Zilliz）</li>
+<li><strong>持续迭代：</strong>建议每月评估新开源模型，2026年开源模型迭代速度极快，及时跟进可获得显著能力提升</li>
+</ul>
+
 <div class="footer">
-  <p>AI自动获客系统规划方案 V1.0 | 内部文件 | 2026年4月</p>
+  <p>AI自动获客系统规划方案 V2.0（含开源模型对比篇） | 内部文件 | 2026年4月</p>
 </div>
 
 </body>
